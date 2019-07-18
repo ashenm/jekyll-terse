@@ -1,0 +1,14 @@
+#!/usr/bin/env python3
+#
+# Serve Project Site
+# https://github.com/ashenm/jekyll-terse
+#
+# Ashen Gunaratne
+# mail@ashenm.ml
+#
+
+from os import P_WAIT, getenv, spawnlp
+
+spawnlp(P_WAIT, 'jekyll', 'jekyll', 'serve', '--port', getenv('PORT', '8080'), '--host', getenv('HOST', '0.0.0.0'))
+
+# vim: set expandtab shiftwidth=2 syntax=python:

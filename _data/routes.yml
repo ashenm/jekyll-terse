@@ -1,0 +1,4 @@
+- path: example
+  url: https://www.example.com/
+
+# vim: set expandtab shiftwidth=2 syntax=yaml:

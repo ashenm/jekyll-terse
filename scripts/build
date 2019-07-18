@@ -1,0 +1,31 @@
+#!/usr/bin/env python3
+#
+# Build Project
+# https://github.com/ashenm/jekyll-terse
+#
+# Ashen Gunaratne
+# mail@ashenm.ml
+#
+
+from os import P_WAIT, spawnlp
+from yaml import FullLoader, load
+
+# grab routes
+with open('_data/routes.yml', 'rb') as stream:
+  routes = load(stream=stream, Loader=FullLoader)
+
+# build pages for routes
+for route in routes:
+  with open ('{}.html'.format(route['path']), 'tw') as file:
+    file.write(
+      '---\n'
+      'title: {}\n'
+      'permalink: /{}\n'
+      'redirect_to: {}\n'
+      '---\n'
+    .format(route['path'].capitalize(), route['path'], route['url']))
+
+# build site
+spawnlp(P_WAIT, 'jekyll', 'jekyll', 'build', '--safe', '--profile')
+
+# vim: set expandtab shiftwidth=2 syntax=python:

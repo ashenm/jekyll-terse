@@ -1,0 +1,22 @@
+#!/usr/bin/env python3
+#
+# Clean Project Build
+# https://travis-ci.com/ashenm/jekyll-terse
+#
+# Ashen Gunaratne
+# mail@ashenm.ml
+#
+
+from yaml import FullLoader, load
+from os import P_WAIT, remove, spawnlp
+from os.path import isfile
+
+# clean generated pages
+with open('_data/routes.yml', 'br') as stream:
+  for route in load(stream=stream, Loader=FullLoader):
+    remove('{}.html'.format(route['path'])) if isfile('{}.html'.format(route['path'])) else None
+
+# clean jekyll build
+spawnlp(P_WAIT, 'jekyll', 'jekyll', 'clean', '--quiet')
+
+# vim: set expandtab shiftwidth=2 syntax=python:

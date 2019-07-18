@@ -1,0 +1,27 @@
+#!/usr/bin/env python3
+#
+# Prepare for Project Deploy
+# https://github.com/ashenm/jekyll-terse
+#
+# Ashen Gunaratne
+# mail@ashenm.ml
+#
+
+from os import P_WAIT, spawnlp
+from yaml import FullLoader, load
+
+# grad jekyll excludes
+with open('_config.yml', 'rb') as stream:
+  excludes = load(stream=stream, Loader=FullLoader)['exclude']
+
+# avoid Gemfile removal
+excludes.remove('Gemfile')
+
+# remove jekyll excludes
+for exclude in excludes:
+  spawnlp(P_WAIT, 'rm', 'rm', '--recursive', '--force', exclude)
+
+# remove jekyll build cache
+spawnlp(P_WAIT, 'rm', 'rm', '--recursive', '--force', '_site')
+
+# vim: set expandtab shiftwidth=2 syntax=python:

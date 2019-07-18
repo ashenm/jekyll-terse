@@ -1,0 +1,24 @@
+safe: ture
+timezone: 'Etc/UTC'
+encoding: 'utf-8'
+url: 'https://terse.ashenm.ml'
+
+plugins:
+  - jekyll-redirect-from
+
+exclude:
+  - Gemfile
+  - Makefile
+  - README.md
+  - requirements.txt
+  - .travis.yml
+  - scripts
+
+defaults:
+  scope:
+    path: ''
+    type: 'pages'
+  values:
+    layout: 'default'
+
+# vim: set expandtab shiftwidth=2 syntax=yaml:

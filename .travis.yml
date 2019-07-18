@@ -1,0 +1,19 @@
+language:
+  python
+
+dist:
+  xenial
+
+script:
+  make build
+
+before_deploy:
+  make tidy
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  fqdn: terse.ashenm.ml
+
+# vim: set expandtab shiftwidth=2 syntax=yaml:
