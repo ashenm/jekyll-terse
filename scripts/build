@@ -17,13 +17,13 @@ with open('_data/routes.yml', 'rb') as stream:
 # build pages for routes
 for route in routes:
   with open ('{}.html'.format(route['path']), 'tw') as file:
-    file.write(
+    file.writelines([
+      '---\n',
+      'title: {}\n'.format(route['path'].capitalize()),
+      'permalink: {}\n'.format(route.get('permalink')) if route.get('permalink') else '',
+      'redirect_to: {}\n'.format(route['url']),
       '---\n'
-      'title: {}\n'
-      'permalink: /{}\n'
-      'redirect_to: {}\n'
-      '---\n'
-    .format(route['path'].capitalize(), route['path'], route['url']))
+    ])
 
 # build site
 spawnlp(P_WAIT, 'jekyll', 'jekyll', 'build', '--safe', '--profile')
