@@ -19,7 +19,7 @@ for route in routes:
   with open ('{}.html'.format(route['path']), 'tw') as file:
     file.writelines([
       '---\n',
-      'title: {}\n'.format(route['path'].capitalize()),
+      'title: {}\n'.format(route['path']),
       'permalink: {}\n'.format(route.get('permalink')) if route.get('permalink') else '',
       'redirect_to: {}\n'.format(route['url']),
       '---\n'
