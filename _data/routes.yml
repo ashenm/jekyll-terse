@@ -4,5 +4,7 @@
   url: https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/800px-HTML5_logo_and_wordmark.svg.png
 - path: alice.txt
   url: https://raw.githubusercontent.com/ashenm/google-pyquick/master/basic/alice.txt
+- path: list.txt
+  url: https://gist.githubusercontent.com/ashenm/b65240c553f5dc03006038f621115e6b/raw/list.txt
 
 # vim: set expandtab shiftwidth=2 syntax=yaml:
