@@ -9,10 +9,13 @@
 
 from yaml import FullLoader, load
 
+with open('_config.yml', 'rb') as stream:
+  url = load(stream=stream, Loader=FullLoader).get('url', 'http://localhost:8080');
+
 with open('_data/routes.yml', 'rb') as stream:
   routes = load(stream=stream, Loader=FullLoader)
 
 for route in routes:
-  print(f'''\033[91m/{route['path'].lower()}\033[0m -> \033[96m{route['url'].lower()}\033[0m''')
+  print(f'''\033[90m{url}\033[91m/{route['path'].lower()}\033[0m -> \033[96m{route['url'].lower()}\033[0m''')
 
 # vim: set expandtab shiftwidth=2 syntax=python:
