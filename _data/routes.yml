@@ -10,5 +10,7 @@
   url: https://gist.githubusercontent.com/ashenm/c939fd0afd9b2d3204d727579d1e461b/raw/spellings.txt
 - path: oredo.txt
   url: https://gist.githubusercontent.com/ashenm/a436f0e896f1eb230e14f299ca728c14/raw/oredo.txt
+- path: search
+  url: https://duckduckgo.com/?kg=p&kad=en_US&kp=-2
 
 # vim: set expandtab shiftwidth=2 syntax=yaml:
