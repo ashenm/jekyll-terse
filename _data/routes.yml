@@ -14,5 +14,7 @@
   url: https://duckduckgo.com/?kg=p&kad=en_US&kp=-2
 - path: excel-functions
   url: https://support.office.com/en-us/article/excel-functions-alphabetical-b3944572-255d-4efb-bb96-c6d90033e188
+- path: planets
+  url: https://codepen.io/ashenm/full/JjKWyEL
 
 # vim: set expandtab shiftwidth=2 syntax=yaml:
